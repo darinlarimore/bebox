@@ -1,0 +1,50 @@
+/**/
+
+body {
+  background-color:white;
+  text-align:center;
+  color: #777;
+  margin: 0;
+}
+
+#slider {
+  width:400px;
+  margin:30px auto;
+  background-color: #222;
+  display: inline-block;
+}
+
+#slider, #slider a {
+  background-image: none;
+  border: 1px solid #555;
+}
+#slider a {
+  background-color: #444;
+}
+
+#wordsDiv {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 110px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;  
+}
+
+#button {
+  cursor: pointer;
+}
+
+#container {
+   padding-top: 145px;
+}
+
+#photo {
+  background-size: contain;
+  border: none;
+  position: relative;
+   -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
