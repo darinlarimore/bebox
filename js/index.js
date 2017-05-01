@@ -35,14 +35,14 @@
           randWord = key.phrase,
           funnyPhoto = key.photo;
       if(randWord.length >= 12){
-        once.to(wordsDiv, 0, {opacity: 0, css:{fontSize: "80px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
+        once.to(wordsDiv, 1, {opacity: 0, css:{fontSize: "80px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
         .to(photo, 0, {attr:{href:funnyPhoto}, transformOrigin:"50% 50%"})
         .staggerTo(textbox, 1, {attr:{ width: (wordsDiv.width() - 885)}, onRepeat:swapImage()})
         .to(wordsDiv, 1, {opacity: 1, onRepeat:randomColor(7)})
         .staggerTo(wordsDiv, 1, {opacity: 1})
         .staggerTo(wordsDiv, 1, {opacity: 0})
       } else if(randWord.length <= 12){
-        once.to(wordsDiv, 0, {opacity: 0, css:{fontSize: "110px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
+        once.to(wordsDiv, 1, {opacity: 0, css:{fontSize: "110px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
         .to(photo, 0, {attr:{href:funnyPhoto}, transformOrigin:"50% 50%"})
         .staggerTo(textbox, 1, {attr:{ width: (wordsDiv.width() - 885)}, onRepeat:swapImage()})
         .to(wordsDiv, 1, {opacity: 1, onRepeat:randomColor(7)})
