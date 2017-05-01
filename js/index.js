@@ -68,17 +68,17 @@
 // yo kelly below is where the lines are being drawn
 
  function animate() {
-    beBox.fromTo(bebox, 1, {drawSVG:"0%", fill: "white", ease:Quart.easeInOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
-    .staggerTo(bebox, 1, {drawSVG:"90% 100%", ease:Quart.easeInOut}, 0.5)
-    .staggerTo(bebox, 1, {drawSVG:"100%", ease:Quart.easeInOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
-    .staggerTo(bebox, 1, {fill: "black", stroke:"black", scale:1, opacity:1}, 0.2)
+    beBox.fromTo(bebox, 1, {drawSVG:"0%", fill: "white", ease:Quart.easeOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.2")
+    .staggerTo(bebox, 1, {drawSVG:"90% 100%", ease:Quart.easeOut}, 0.5)
+    .staggerTo(bebox, 1, {drawSVG:"100%", ease:Quart.easeOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.2")
+    .staggerTo(bebox, 1, {fill: "black", stroke:"black", scale:1, opacity:1}, .1)
 
     beBox.from(be, 1, {opacity:0}, 1)
 
-    textLine.fromTo(textbox, 1, {drawSVG:"0%", ease:Quart.easeInOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
-    .staggerTo(textbox, 1, {drawSVG:"95% 100%"}, 0.5)
-    .staggerTo(textbox, 1, {drawSVG:"100%", stroke:"black", onComplete:complete}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
-    .staggerTo(textbox, 2.9, {drawSVG:"100%", ease:Quart.easeInOut })
+    textLine.fromTo(textbox, 1, {drawSVG:"0%", ease:Quart.easeOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
+    .staggerTo(textbox, 1, {drawSVG:"95% 100%"}, 0.1)
+    .staggerTo(textbox, 1, {drawSVG:"100%", stroke:"black", onComplete:complete}, {drawSVG:"10%", ease:Quart.easeOut}, "+=0.1")
+    .staggerTo(textbox, 2.9, {drawSVG:"100%", ease:Quart.easeInOut} )
     .staggerTo(textbox, 1, {opacity: 0})
     .staggerTo(textbox, 1.5, {opacity: 0})
     // console.log(words)
