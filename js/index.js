@@ -35,14 +35,14 @@
           randWord = key.phrase,
           funnyPhoto = key.photo;
       if(randWord.length >= 12){
-        once.to(wordsDiv, 0, {opacity: 0, css:{fontSize: "80px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
+        once.to(wordsDiv, 1, {opacity: 0, css:{fontSize: "80px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
         .to(photo, 0, {attr:{href:funnyPhoto}, transformOrigin:"50% 50%"})
         .staggerTo(textbox, 1, {attr:{ width: (wordsDiv.width() - 885)}, onRepeat:swapImage()})
         .to(wordsDiv, 1, {opacity: 1, onRepeat:randomColor(7)})
         .staggerTo(wordsDiv, 1, {opacity: 1})
         .staggerTo(wordsDiv, 1, {opacity: 0})
       } else if(randWord.length <= 12){
-        once.to(wordsDiv, 0, {opacity: 0, css:{fontSize: "110px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
+        once.to(wordsDiv, 1, {opacity: 0, css:{fontSize: "110px"}, text:{value:randWord, delimiter:""}, ease:Linear.easeNone})
         .to(photo, 0, {attr:{href:funnyPhoto}, transformOrigin:"50% 50%"})
         .staggerTo(textbox, 1, {attr:{ width: (wordsDiv.width() - 885)}, onRepeat:swapImage()})
         .to(wordsDiv, 1, {opacity: 1, onRepeat:randomColor(7)})
@@ -65,7 +65,6 @@
       }
     };
 
-// yo kelly below is where the lines are being drawn
 
  function animate() {
     beBox.fromTo(bebox, 1, {drawSVG:"0%", fill: "white", ease:Quart.easeInOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
@@ -109,10 +108,18 @@
             phrase: item.fields.Phrase,
             photo: item.fields.colorphoto[0].url});
          }
-      })
+      }).done(animate())
 
     } else {
       // if the json request is successful but there are no items
       $("<p>JSON request succeeded but no data returned.</p>").prependTo("#container");
     }
-  }).done(animate())
+  })
+
+  .fail(function() {
+    $("<p>JSON request fail</p>").prependTo("#container");
+  })
+
+  .error(function() {
+    $("<p>JSON request error</p>").prependTo("#container");
+  });
