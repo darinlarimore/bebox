@@ -65,7 +65,6 @@
       }
     };
 
-// yo kelly below is where the lines are being drawn
 
  function animate() {
     beBox.fromTo(bebox, 1, {drawSVG:"0%", fill: "white", ease:Quart.easeInOut}, {drawSVG:"10%", ease:Quart.easeInOut}, "+=0.1")
@@ -109,10 +108,18 @@
             phrase: item.fields.Phrase,
             photo: item.fields.colorphoto[0].url});
          }
-      })
+      }).done(animate())
 
     } else {
       // if the json request is successful but there are no items
       $("<p>JSON request succeeded but no data returned.</p>").prependTo("#container");
     }
-  }).done(animate())
+  })
+
+  .fail(function() {
+    $("<p>JSON request fail</p>").prependTo("#container");
+  })
+
+  .error(function() {
+    $("<p>JSON request error</p>").prependTo("#container");
+  });
